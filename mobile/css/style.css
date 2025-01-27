@@ -674,6 +674,11 @@ section {
     color: #fff;
     font-size: 11px;
 }
+.kakao-info-window {
+    background: none !important; 
+    border: none !important;
+    box-shadow: none !important;
+  }
 
 /* sec5 */
 #sec5 {

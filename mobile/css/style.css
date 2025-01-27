@@ -503,7 +503,7 @@ section {
     position: absolute;
     top: 14%;
     left: 50%;
-    transform: translate(-50%, 30%); 
+    transform: translate(-50%, calc(-14% + 50px)); 
     width: max-content;
     opacity: 0;
     transition: transform 1s ease-in-out, opacity 1.5s ease;
@@ -583,11 +583,12 @@ section {
 /* map */
 #map_sec {
     position: relative;
-    background: #222;
+    background: url(../img/map_bg.jpg) no-repeat center;
+    background-size: cover;
 }
 #map {
     width: 100vw;
-    height: 20%;
+    height: 25%;
     position: absolute;
     top: 65%;
     transform: translateY(-65%);
@@ -625,7 +626,7 @@ section {
     position: absolute;
     top: 22%;
     left: 50%;
-    transform: translate(-50%, -2%); 
+    transform: translate(-50%, calc(-22% + 50px)); 
     width: max-content;
     opacity: 0;
     transition: transform 1s ease-in-out, opacity 1.5s ease;
@@ -655,6 +656,8 @@ section {
     gap: 10px;
     align-items: center;
     background: rgba(0, 0, 0, .6);
+    opacity: 0;
+    transition: opacity 2s ease;
 }
 #map_sec .slide_bottom  {
     position: absolute;
@@ -666,13 +669,48 @@ section {
     gap: 10px;
     align-items: center;
     background: rgba(0, 0, 0, .6);
+    opacity: 0;
+    transition: opacity 2s ease;
 }
 #map_sec .slide_top p,
 #map_sec .slide_bottom p
  {
     white-space: nowrap;
     color: #fff;
-    font-size: 11px;
+    font-size: 10px;
+}
+#map_sec.visible .slide_top,
+#map_sec.visible .slide_bottom {
+    opacity: 1;
+}
+.slide_content {
+    display: flex;
+    gap: 10px;
+    white-space: nowrap;
+    animation: slideText 120s linear infinite;
+}
+#map_sec.visible .slide_bottom .slide_content {
+    animation: slideText2 120s linear infinite;
+}
+@keyframes slideText {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+@keyframes slideText2 {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+#map_sec .slide_top:hover .slide_content,
+#map_sec .slide_bottom:hover .slide_content {
+    animation-play-state: paused;
 }
 .kakao-info-window {
     background: none !important; 
@@ -692,30 +730,31 @@ section {
 }
 #sec5>div {
     position: absolute;
-    top: 18%;
+    top: 14%;
+    transform: translateY(-14%);
 }
 #sec5 h3 {
+    font-size: 2.5rem;
+    font-weight: 900;
     color: #996933;
-    font-size: 2.1rem;
     text-align: center;
     margin-bottom: .5rem;
     letter-spacing: .1rem;
     opacity: 0;
     transform: translateY(50px);
-    transition: all .8s ease;
-    font-weight: 600;
+    transition: transform 1s ease-in-out, opacity 1.5s ease;
 }
-#sec5 h3+p {   
+#sec5>div p {   
     color: #fff; 
     font-size: .8rem;
     letter-spacing: .06rem;
     opacity: 0;
     transform: translateY(50px);
-    transition: all .8s ease;
+    transition: transform 1s ease-in-out, opacity 1.5s ease;
     font-weight: 300;
 }
 #sec5.visible h3,
-#sec5.visible h3+p {
+#sec5.visible>div p {
     opacity: 1;
     transform: translateY(0);
 }
@@ -750,20 +789,20 @@ section {
     transition: all .3s ease;
 }
 #sec5>a::after {
-    left: 25%;
+    left: 28%;
 }
 #sec5>a::before {
-    right: 25%;
+    right: 28%;
 }
 #sec5>a:hover {
     background: rgba(0, 0, 0, .8);  
 }
 #sec5>a:hover::after {
-    left: 28%;
+    left: 32%;
     opacity: 1;
 }
 #sec5>a:hover::before {
-    right: 28%;
+    right: 32%;
     opacity: 1;
 }
 

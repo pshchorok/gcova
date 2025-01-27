@@ -276,7 +276,7 @@ observer.observe(sec5);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const map_sec = document.querySelector("#map_sec"); // 섹션 5 선택
+const map_sec = document.querySelector("#map_sec");
 
 const observerOptions = {
   root: null,  // viewport 기준

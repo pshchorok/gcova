@@ -209,8 +209,8 @@
             const map = new kakao.maps.Map(container, options);
       
             const currentMarkerImage = new kakao.maps.MarkerImage(
-              "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png",
-              new kakao.maps.Size(30, 40)
+              "https://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png",
+              new kakao.maps.Size(35, 32)
             );
       
             const currentMarker = new kakao.maps.Marker({
@@ -261,7 +261,9 @@
                     font-family:Noto Sans, sans-serif; 
                     font-weight:300; 
                     color:#333; 
-                    // background:#fff;
+                    background:#fff;
+                    border: 1px solid #333;
+                    outline: none;
                     border-radius:10px;
                     box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
                     max-width: 250px;">

@@ -25,6 +25,7 @@ body {
     scrollbar-width: none;
     -ms-overflow-style: none;
     overflow-x: hidden;
+    user-select: none;
 }
 body.no-scroll {
     overflow: hidden;
@@ -311,8 +312,31 @@ section {
     width: 100vw;
     height: 100vh;
     user-select: none;
+    position: relative;
+}
+section::before,
+section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10%; /* 그림자 높이 조정 */
+  z-index: 1;
 }
 
+section::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, .8), transparent);
+}
+
+section::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, .8), transparent);
+}
+section:nth-of-type(1)::after,
+section:nth-of-type(1)::before {
+    display: none;
+}
 /* sec1 */  
 #sec1 {
     background: url(../img/sec1.jpg)no-repeat center center;
@@ -336,7 +360,7 @@ section {
     padding: 8px 25px;
     border-radius: 5px;
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-weight: 100;
     font-size: 0.7rem;
     letter-spacing: 0.1rem;
     left: 50%;
@@ -404,6 +428,7 @@ section {
     background: url(../img/sec3.jpg)no-repeat center;
     background-size: cover;
     height: 100%;
+    padding: 20% 0;
 }
 #sec3>ul {
     width: 100%;
@@ -416,7 +441,7 @@ section {
     position: relative;
     opacity: 0;
     transform: translateX(-100px);
-    transition: all .8s ease;
+    transition: all .8s ease-in-out;
     border-bottom: 1px dashed #c9c9c9;
     display: flex;
     justify-content: center;
@@ -454,14 +479,14 @@ section {
 #sec3 li:last-of-type::before {
     display: none;
 }
-#sec3 li:nth-of-type(3), 
-#sec3 li:nth-of-type(4), 
+#sec3 li:nth-of-type(5), 
+#sec3 li:nth-of-type(6), 
 #sec3 li:nth-of-type(7), 
 #sec3 li:nth-of-type(8)
 {
     opacity: 0;
     transform: translateX(100px);
-    transition: all .8s ease;
+    transition: all .8s ease-in-out;
 }
 #sec3 li strong {
     font-weight: 900;
@@ -720,7 +745,7 @@ section {
 
 /* sec5 */
 #sec5 {
-    background: url(../img/sec5.png) no-repeat top;
+    background: url(../img/sec5.jpg) no-repeat top;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -731,37 +756,37 @@ section {
 #sec5>div {
     position: absolute;
     top: 14%;
-    transform: translateY(-14%);
+    opacity: 0;
+    transform: translateY(calc(-14% + 50px));
+    transition: transform 1s ease-in-out, opacity 1.5s ease;
 }
 #sec5 h3 {
     font-size: 2.5rem;
     font-weight: 900;
     color: #996933;
     text-align: center;
-    margin-bottom: .5rem;
     letter-spacing: .1rem;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: transform 1s ease-in-out, opacity 1.5s ease;
+}
+#sec5>div>span {
+    margin-bottom: 10px;
+    font-size: .7rem;
+    color: #c9c9c9;
+    text-align: center;
+    display: block;
 }
 #sec5>div p {   
     color: #fff; 
-    font-size: .8rem;
-    letter-spacing: .06rem;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: transform 1s ease-in-out, opacity 1.5s ease;
-    font-weight: 300;
+    font-size: 1rem;
+    font-weight: 500;
 }
-#sec5.visible h3,
-#sec5.visible>div p {
+ #sec5.visible>div {
     opacity: 1;
     transform: translateY(0);
-}
+ }
 #sec5>a {
     display: block;
     color: #fff;
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, .5);
     width: 100%;
     text-align: center;
     font-size: .85rem;
@@ -775,7 +800,7 @@ section {
 }
 #sec5.visible a {
     opacity: 1;
-    transition: .8s ease;
+    transition: 2s ease;
 }
 #sec5>a::after,
 #sec5>a::before {
@@ -795,7 +820,7 @@ section {
     right: 28%;
 }
 #sec5>a:hover {
-    background: rgba(0, 0, 0, .8);  
+    background: rgba(0, 0, 0, .9);  
 }
 #sec5>a:hover::after {
     left: 32%;
@@ -821,7 +846,7 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     opacity: 0;
-    transition: opacity .8s ease;
+    transition: opacity 2s ease;
 }
 #sec5.visible footer {
     opacity: 1;

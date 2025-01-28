@@ -737,7 +737,11 @@ section:nth-of-type(1)::before {
 #map_sec .slide_bottom:hover .slide_content {
     animation-play-state: paused;
 }
-
+.custom-infowindow {
+    width: 200px !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+  }
 .custom-infowindow {
     padding: 10px;
     font-size: 12px;

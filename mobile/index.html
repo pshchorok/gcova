@@ -257,19 +257,12 @@
                 markers.push(marker);
       
                 const infoWindowContent = `
-                  <div style="
-                    padding:10px; 
-                    font-size:12px; 
-                    font-family:Noto Sans, sans-serif; 
-                    font-weight:300; 
-                    color:#333; 
-                    width: fit-content;
-                    height: fit-content
-                    <strong style="color:#d32f2f;">${places[i].place_name}</strong><br>
-                    ${places[i].road_address_name || places[i].address_name}<br>
-                    <span style="color:#007bff; display: block;">전화번호: ${places[i].phone || '정보 없음'}</span>
-                  </div>
-                `;
+                <div class="custom-infowindow">
+                  <strong class="infowindow-title">${places[i].place_name}</strong><br>
+                  ${places[i].road_address_name || places[i].address_name}<br>
+                  <span class="infowindow-phone">전화번호: ${places[i].phone || '정보 없음'}</span>
+                </div>
+              `;
       
                 const infowindow = new kakao.maps.InfoWindow({
                   content: infoWindowContent,

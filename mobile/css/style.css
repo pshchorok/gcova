@@ -737,12 +737,33 @@ section:nth-of-type(1)::before {
 #map_sec .slide_bottom:hover .slide_content {
     animation-play-state: paused;
 }
-.kakao-info-window {
-    background: none !important; 
-    border: none !important;
-    box-shadow: none !important;
-  }
 
+.custom-infowindow {
+    padding: 10px;
+    font-size: 12px;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 300;
+    color: #333;
+    width: 200px;  /* 최대 너비 지정 */
+    white-space: normal; /* 텍스트 줄바꿈 허용 */
+    word-wrap: break-word; /* 긴 단어 자동 줄바꿈 */
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .infowindow-title {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .infowindow-phone {
+    color: #007bff;
+    display: block;
+    margin-top: 5px;
+  }
 /* sec5 */
 #sec5 {
     background: url(../img/sec5.jpg) no-repeat top;

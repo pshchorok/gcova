@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/moblie_dev.css">
+    <script src="js/jquery-1.11.2.min.js"></script>
     <title>GCOVA</title>
 </head>
 <body>
@@ -18,9 +19,32 @@
         </div>
         <div id="main">
             <div class="device">
+                <span class="time"></span>
+                <div id="top">
+                    <span class="top_1"></span>
+                    <span class="top_2"></span>
+                    <span class="top_3"></span>
+                </div>
                 <iframe src="../mobile/index.html" frameborder="0"></iframe>
             </div>
         </div>
     </div>
+    <script>
+        function updateTime() {
+            const timeElement = document.querySelector(".time");
+            const now = new Date();
+
+            const hours = String(now.getHours()).padStart(2, "0"); 
+            const minutes = String(now.getMinutes()).padStart(2, "0");
+
+            const formattedTime = `${hours}:${minutes}`;
+            timeElement.textContent = formattedTime;
+            }
+
+            // 매분마다 업데이트
+            setInterval(updateTime, 1000);
+
+            updateTime();
+    </script>
 </body>
 </html>

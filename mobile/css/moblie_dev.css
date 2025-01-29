@@ -43,7 +43,7 @@ body {
 .device {
     position: absolute;
     border: 10px solid #000;
-    background: #171517;
+    background: #000;
     box-shadow: 0 0 50px 10px rgba(0, 0, 0, .4);
     border-radius: 60px;
     left: 50%;
@@ -71,4 +71,43 @@ body {
     padding-top: 40px;
     background: #111;
     border-radius: 0 0 45px 45px;
+}
+.time {
+    position: absolute;
+    top: 12px;
+    left: 45px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 600;
+}
+#top {
+    position: absolute;
+    top: 10px;
+    right: 22px;
+    gap: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top_1 {
+    display: block;
+    background: url(..//img/top_1.png)no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+}
+.top_2 {
+    display: block;
+    background: url(..//img/top_2.png)no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+}
+.top_3{
+    display: block;
+    background: url(..//img/top_3.png)no-repeat;
+    width: 26px;
+    height: 20px;
+    background-size: contain;
+    margin-bottom: 4px;
 }

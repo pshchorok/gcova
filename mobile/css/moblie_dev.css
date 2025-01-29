@@ -82,7 +82,7 @@ body {
 }
 #top {
     position: absolute;
-    top: 10px;
+    top: 12px;
     right: 22px;
     gap: 2px;
     display: flex;
@@ -109,5 +109,5 @@ body {
     width: 26px;
     height: 20px;
     background-size: contain;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 }

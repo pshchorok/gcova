@@ -1,4 +1,9 @@
+const { useEffect } = React;
+const { createRoot } = ReactDOM;
+
+
 function Sample(){
+  
   return(
         <>
           <Header/>
@@ -14,7 +19,20 @@ function Sample(){
 
 function Header() {
 
-  return(
+  useEffect(() => {
+    // 기존 JavaScript(main.js) 파일 실행
+    const script = document.createElement("script");
+    script.src = "./js/main.js";
+    script.async = true;
+    document.body.appendChild(script);
+  
+    return () => {
+      document.body.removeChild(script); // 컴포넌트 언마운트 시 제거
+    };
+    
+  }, []);
+
+  return( 
     <>
      
      <header>
@@ -269,8 +287,9 @@ function Sec_5() {
       <img src="img/foot_logo.png" alt="하단 로고" width="50" />
     </footer>
   </section>
-    </>
+  </>
   )
+  
 }
 
 ReactDOM.render(

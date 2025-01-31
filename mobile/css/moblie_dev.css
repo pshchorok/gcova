@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #333;
+    background: url(../dev_img/back.jpg) no-repeat left;
     background-size: cover;
     color: #dcdcdc;
 }
@@ -31,12 +31,14 @@ body {
 }
 .part h2 {
     margin: 1rem 0 .5rem;
-    font-size: 45px;
+    font-size: 50px;
     color: #996933;
+    font-weight: bold;
 }
 .part h2+p {
     color: #9a9a9a;
     padding-left: 10px;
+    opacity: 0;
 }
 .txt {
     margin: 2rem 0 1rem;

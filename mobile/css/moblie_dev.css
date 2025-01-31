@@ -9,7 +9,7 @@
 body {
     background: #333;
     background-size: cover;
-    color: #fff;
+    color: #dcdcdc;
 }
 #mbox {
     display: grid;
@@ -25,7 +25,6 @@ body {
     margin-top:100px;
 }
 .part {
-    width: 80%;
     padding-top: 1rem;
     margin: 50px auto 0;
     font-size: 16px;
@@ -33,28 +32,123 @@ body {
 .part h2 {
     margin: 1rem 0 .5rem;
     font-size: 45px;
+    color: #996933;
+}
+.part h2+p {
+    color: #9a9a9a;
+    padding-left: 10px;
 }
 .txt {
     margin: 2rem 0 1rem;
     font-weight: bold;
-    font-style: italic;
-    font-size: 16px;
+    font-size: 25px;
+    color: #996933;
+}
+.txt+p {
+    margin-bottom: 55px;
+    padding-left: 10px;
 }
 .skill {
-    width: 80%;
-    margin: 150px 0 0;
+    width: 100%;
+    margin-top: 50px;
 }
 .skill ul {
     width: 100%;
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
+    padding-left: 10px;
+    justify-content: space-between;
 }
-.skill li {
-    width: 20%;
-}
+
 .skill li img {
     width: 100%;
+}
+.style ul:nth-of-type(1) {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.style ul:nth-of-type(1) li:first-child {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 20px;
+    color: #fff;
+    padding-left: 10px;
+}
+.style ul:nth-of-type(1) li:not(li:first-child) {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+.style ul:nth-of-type(1) li span {
+    width: 60px;
+    height: 60px;
+    background: #996933;
+    border-radius: 15px;
+    display: block;
+    border: 1px solid #fff;
+    margin: 0 auto;
+}
+.style ul:nth-of-type(1) li:nth-child(2) span {
+    background: #fff;
+}
+.style ul:nth-of-type(1) li:nth-child(3) span {
+    background: #dcdcdc;
+}
+.style ul:nth-of-type(1) li:nth-child(4) span {
+    background: #c9c9c9;
+}
+.style ul:nth-of-type(1) li:nth-child(5) span {
+    background: #9a9a9a;
+}
+.style ul:nth-of-type(1) li:nth-child(6) span {
+    background: #221e1f;
+}
+.style ul:nth-of-type(1) li:nth-child(7) span {
+    background: #000;
+}
+.style ul:nth-of-type(2) {
+    display: flex;
+    align-items: center;
+    gap: 150px;
+    margin-top: 40px;
+    text-align: center;
+    padding-left: 10px;
+}
+.style ul:nth-of-type(2) li:first-child {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 20px;
+    color: #fff;
+}
+.style ul:nth-of-type(2) li:nth-child(2) {
+    font-family: 'Noto Serif KR';
+}
+.style ul:nth-of-type(2) li:nth-child(3) {
+    font-family: 'Noto Sans KR';
+}
+.style ul:nth-of-type(2) li p:first-child {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.style ul:nth-of-type(2) li p {
+    margin-bottom: 3px;
+}
+.style ul:nth-of-type(2) li p:nth-child(2) {
+    font-size: 16px;
+    font-weight: 100;
+}
+.style ul:nth-of-type(2) li p:nth-child(3) {
+    font-size: 16px;
+    font-weight: 600;
+}
+.style ul:nth-of-type(2) li p:nth-child(4) {
+    font-size: 16px;
+    font-weight: 900;
 }
 .device {
     position: absolute;
@@ -62,9 +156,8 @@ body {
     background: #000;
     box-shadow: 0 0 50px 10px rgba(0, 0, 0, .4);
     border-radius: 60px;
-    left: 70%;
+    right: 0%;
     top: 0;
-    transform: translateX(-70%);
     overflow: hidden;
 }
 .device::before,

@@ -7,17 +7,15 @@
 }
 
 body {
-    background: #444;
+    background: #333;
     background-size: cover;
     color: #fff;
 }
 #mbox {
     display: grid;
     width: 70%;
-    margin: 2rem auto;
+    margin: 0 auto;
     grid-template-columns: repeat(2,1fr);
-    column-gap: 2rem;
-    height: 45rem;
 }
 #box {
     position: relative;
@@ -29,26 +27,44 @@ body {
 .part {
     width: 80%;
     padding-top: 1rem;
-    margin: 0 auto;
+    margin: 50px auto 0;
+    font-size: 16px;
 }
-.part h2, h3 {
-    margin: 1rem 0;
+.part h2 {
+    margin: 1rem 0 .5rem;
+    font-size: 45px;
 }
 .txt {
     margin: 2rem 0 1rem;
     font-weight: bold;
     font-style: italic;
+    font-size: 16px;
 }
-
+.skill {
+    width: 80%;
+    margin: 150px 0 0;
+}
+.skill ul {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.skill li {
+    width: 20%;
+}
+.skill li img {
+    width: 100%;
+}
 .device {
     position: absolute;
     border: 10px solid #000;
     background: #000;
     box-shadow: 0 0 50px 10px rgba(0, 0, 0, .4);
     border-radius: 60px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    left: 70%;
+    top: 0;
+    transform: translateX(-70%);
     overflow: hidden;
 }
 .device::before,

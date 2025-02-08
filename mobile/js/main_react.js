@@ -48,33 +48,33 @@ function Header() {
             <h2>Sub_Logo</h2>
         </div>
         <ul>
-            <li><button>회사소개 <i className="xi-angle-down-thin"></i></button>
+            <li><button>회사소개 <i className="fa-solid fa-chevron-down"></i></button>
                 <ul>
                     <li><a href="#">인사말</a></li>
                     <li><a href="#">회사연혁</a></li>
                     <li><a href="#">주요시설</a></li>
                 </ul>
             </li>
-            <li><button>메뉴 <i className="xi-angle-down-thin"></i></button>
+            <li><button>메뉴 <i className="fa-solid fa-chevron-down"></i></button>
                 <ul>
                     <li><a href="#">양념치킨</a></li>
                     <li><a href="#">소금구이치킨</a></li>
                 </ul>
             </li>
-            <li><button>매장안내 <i className="xi-angle-down-thin"></i></button>
+            <li><button>매장안내 <i className="fa-solid fa-chevron-down"></i></button>
                 <ul>
                     <li><a href="#">전국매장안내</a></li>
                     <li><a href="#">지사안내</a></li>
                 </ul>
             </li>
-            <li><button>가맹점개설 <i className="xi-angle-down-thin"></i></button>
+            <li><button>가맹점개설 <i className="fa-solid fa-chevron-down"></i></button>
                 <ul>
                     <li><a href="#">개설 절차</a></li>
                     <li><a href="#">개설 상세내역</a></li>
                     <li><a href="#">지역별 상담</a></li>
                 </ul>
             </li>
-            <li><a href="#">신규개설점 <i className="xi-angle-right-thin"></i></a></li>
+            <li><a href="#">신규개설점 <i class="fa-solid fa-chevron-right"></i></a></li>
         </ul>
         <div id="n_footer">
             <p>Cosyright &copy; 1994gcova.co.kr ALL Rights Reseved.</p>

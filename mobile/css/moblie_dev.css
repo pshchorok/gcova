@@ -160,8 +160,8 @@ body {
     box-shadow: 0 0 50px 10px rgba(0, 0, 0, .4);
     border-radius: 60px;
     right: 0%;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 35%;
+    transform: translateY(-35%);
     overflow: hidden;
 }
 .device::before,

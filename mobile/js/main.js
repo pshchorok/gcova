@@ -22,21 +22,27 @@
   body.style.scrollbarWidth = "none";
   body.style.msOverflowStyle = "none";
 
-  // 🔹 네비게이션 메뉴 이벤트
+  // // 🔹 네비게이션 메뉴 이벤트
   $(function () {
     $("nav button").click(function () {
       const submenu = $(this).next("ul");
       const icon = $(this).find("i");
-
-      $("nav button").not(this).removeClass("active");
-      $("nav ul ul").not(submenu).stop().slideUp(500);
-      $("nav button i").not(icon).css({ transform: "rotate(0deg)", transition: "all 0.5s ease" });
-
-      $(this).toggleClass("active", !submenu.is(":visible"));
-      submenu.stop().slideToggle(500);
-      icon.css({ transform: submenu.is(":visible") ? "rotate(180deg)" : "rotate(0deg)", transition: "all 0.5s ease" });
+      const isActive = $(this).hasClass("active");
+  
+      // 모든 메뉴 초기화 (닫기)
+      $("nav button").removeClass("active");
+      $("nav ul ul").stop().slideUp(500);
+      $("nav button i").css({ transform: "rotate(0deg)", transition: "all 0.5s ease" });
+  
+      // ✅ 클릭한 메뉴가 원래 닫힌 상태라면 열기
+      if (!isActive) {
+        $(this).addClass("active");
+        submenu.stop().slideDown(500);
+        icon.css({ transform: "rotate(180deg)", transition: "all 0.5s ease" });
+      }
     });
-
+  
+    // ✅ 햄버거 메뉴 닫을 때 모든 상태 초기화
     $("#menu").change(function () {
       if (!this.checked) {
         $("nav button").removeClass("active");
@@ -44,7 +50,8 @@
         $("nav button i").css({ transform: "rotate(0deg)", transition: "all 0.5s ease" });
       }
     });
-
+  
+    // ✅ 오버레이 클릭 시 닫기
     $(".overlay").click(() => $("#menu").prop("checked", false).trigger("change"));
   });
 
